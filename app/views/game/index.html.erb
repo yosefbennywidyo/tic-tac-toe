@@ -1,0 +1,10 @@
+<main class="background">
+  <%= render 'shared/toast' %>
+  <div class="container mt-5">
+    <% if @player1_name && @player2_name %>
+	    redirect_to game_board_path
+    <% else %>
+      <%= render 'player_names_form' %>
+    <% end %>
+  </div>
+</main>

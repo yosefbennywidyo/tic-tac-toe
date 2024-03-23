@@ -1,0 +1,17 @@
+<div id="tic-tac-toe-main" data-controller="tic-tac-toe" data-first-player-name="<%= @first_player %>" data-second-player-name="<%= @second_player %>">
+  <main class="background">
+    <section class="title">
+      <h1>Tic Tac Toe</h1>
+    </section>
+    <section class="display" data-tic-tac-toe-target="playerDisplay">
+      Player <span class="display-player playerX">X</span>'s turn
+    </section>
+    <section class="container" data-tic-tac-toe-target="ticTacToeBoard"></section>
+    <section class="display announcer hide" data-tic-tac-toe-target="announcer"></section>
+    <section id="notification-container"></section>
+    <section class="controls">
+      <button id="end-turn" class="btn btn-primary" data-tic-tac-toe-target="endTurnButton" data-action="click->tic-tac-toe#endTurn">End turn</button>
+      <button id="reset" class="btn btn-secondary" data-action="click->tic-tac-toe#handleReset">Reset</button>
+    </section>
+  </main>
+</div>
