@@ -1,32 +1,54 @@
-# README
+# Tic Tac Toe
 
-A player has_one :game
-A game belongs_to :player
-A game has_many :moves
-Moves belongs_to :game
+This is a simple web-based Tic Tac Toe game built with Ruby on Rails and StimulusJS.
 
-A player has_many :moves, through: :game
-Moves has_one :player, through: :game
+## Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby version: 3.3.0
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+To run the game locally on your machine, follow these steps:
 
-* System dependencies
+### Clone this repository to your local machine:
 
-* Configuration
+```bash
+git clone git@github.com:yosefbennywidyo/tic-tac-toe.git
+```
 
-* Database creation
+### Navigate to the project directory:
 
-* Database initialization
+```bash
+cd tic-tac-toe
+```
 
-* How to run the test suite
+### Install the necessary dependencies:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle install
+```
 
-* Deployment instructions
+### Start the Rails server:
 
-* ...
+```bash
+rails server
+```
+
+Open your web browser and navigate to http://localhost:3000 to play the game.
+
+## Gameplay
+
+- Enter the names of Player 1 and Player 2.
+- Click the "Start Game" button to begin.
+- Players take turns clicking on empty tiles to place their symbol (X or O).
+- The first player to form a horizontal, vertical, or diagonal line of three of their symbols wins.
+- If all tiles are filled and no player has won, the game ends in a draw.
+
+
+## Running Tests
+
+To run the test suite, execute the following command:
+
+```bash
+rails test:all
+```
