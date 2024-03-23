@@ -2,17 +2,33 @@
 <html>
   <head>
     <title>TicTacToe</title>
+    <!-- Set viewport to adjust layout on different devices -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <!-- Cross-Site Request Forgery (CSRF) meta tags -->
     <%= csrf_meta_tags %>
+    
+    <!-- Content Security Policy (CSP) meta tag for security -->
     <%= csp_meta_tag %>
 
+    <!-- Link to the main application stylesheet -->
     <%= stylesheet_link_tag "application", media: 'all', "data-turbolinks-track": "reload" %>
+    
+    <!-- Set Turbo visit control to reload -->
     <meta name="turbo-visit-control" content="reload">
+    
+    <!-- Import JavaScript modules via import map -->
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <!-- Render content dynamically -->
     <%= yield %>
+    
+    <!--
+      Define environment variables for the client-side
+      related to this bug: https://github.com/rails/importmap-rails/issues/65
+    -->
     <script>
       window.process = { env: { NODE_ENV: 'production'} }
     </script>

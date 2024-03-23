@@ -104,51 +104,62 @@ class TicTacToeGamesTest < ApplicationSystemTestCase
 
   private
 
+  # Helper method to fill in player names
   def fill_in_players(player1, player2)
     fill_in "Player 1 Name:", with: player1
     fill_in "Player 2 Name:", with: player2
   end
 
+  # Helper method to start the game
   def start_game
     click_button "Start Game"
   end
 
+  # Helper method to end the turn
   def end_turn
     click_button "End turn"
   end
 
+  # Helper method to assert flash message and redirection
   def assert_flash_message_and_redirect
     assert_text "Please input your players name"
     assert_current_path root_path
   end
 
+  # Helper method to make a move
   def make_move(index)
     find("div[data-index='#{index}']").click
 
     end_turn
   end
 
+  # Helper method to check if the end turn button is disabled
   def end_turn_disabled(index)
     find("div[data-index='#{index}']").click
     find("#end-turn").disabled?
   end
 
+  # Helper method to assert the winner
   def assert_winner(player)
     assert_text "Congrats #{player}, you won"
   end
 
+  # Helper method to assert a draw
   def assert_draw
     assert_text "Tie"
   end
 
+  # Helper method to assert an occupied tile
   def assert_occupied
     assert_text "This tile is already occupied"
   end
 
+  # Helper method to assert multiple tiles selected
   def assert_multi_tiles
     assert_text "You can only select one tile before ending your turn"
   end
 
+  # Helper method to assert the game is over
   def game_is_over
     assert_text "Game Over"
   end

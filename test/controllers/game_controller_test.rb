@@ -2,6 +2,7 @@ require "test_helper"
 
 class GameControllerTest < ActionDispatch::IntegrationTest
   def setup
+    # Define valid parameters for the Tic Tac Toe game
     @valid_params = { first_player: "Player 1", second_player: "Player 2" }
   end
 
@@ -30,10 +31,12 @@ class GameControllerTest < ActionDispatch::IntegrationTest
 
   private
 
+  # Method to simulate posting to the start action with given parameters
   def post_start_with_params(params)
     post game_start_path, params: params
   end
 
+  # Method to assert the presence of flash warning message
   def assert_flash_warning
     assert_equal "Please input your players name", flash[:warning]
   end
